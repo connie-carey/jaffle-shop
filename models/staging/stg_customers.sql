@@ -1,4 +1,4 @@
--- comment 3
+-- comment merge conflict
 with
 
 source as (
