@@ -1,3 +1,5 @@
+-- comment for deferral test
+
 with
 
 customers as (
