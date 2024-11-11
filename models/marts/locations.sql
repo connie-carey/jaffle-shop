@@ -3,7 +3,7 @@ with
 locations as (
 
     select * from {{ ref('stg_locations') }}
-    limit 100
+    where location_id is not null
 
 )
 
