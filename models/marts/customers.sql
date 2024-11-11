@@ -12,6 +12,7 @@ customers as (
 orders as (
 
     select * from {{ ref('orders') }}
+    where order_id is not null
 
 ),
 
