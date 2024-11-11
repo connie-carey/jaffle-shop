@@ -5,7 +5,7 @@ with
 customers as (
 
     select * from {{ ref('stg_customers') }}
-    where customer_id != env_var('DBT_FIRST_ENV_VAR')
+    where customer_id is not null
 
 ),
 
