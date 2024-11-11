@@ -5,7 +5,7 @@ with
 customers as (
 
     select * from {{ ref('stg_customers') }}
-    limit 100
+    where customer_id is not null
 
 ),
 
