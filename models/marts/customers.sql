@@ -5,7 +5,6 @@ with
 customers as (
 
     select * from {{ ref('stg_customers') }}
-    where customer_id is not null
 
 ),
 
