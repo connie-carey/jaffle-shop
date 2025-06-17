@@ -5,12 +5,14 @@ with
 customers as (
 
     select * from {{ ref('stg_customers') }}
+    where 1=1
 
 ),
 
 orders as (
 
     select * from {{ ref('orders') }}
+    where 1=1
 
 ),
 
