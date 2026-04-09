@@ -1,0 +1,9 @@
+models:
+  - name: stg_orphaned
+    description: Orphaned yml to break Fusion
+    columns:
+      - name: customer_id
+        description: The unique key for each customer.
+        data_tests:
+          - not_null
+          - unique

@@ -1,13 +1,9 @@
-{% materialization custom_mat, default %}
-
-  {% set target_relation = this %}
-
-  {% call statement('main') %}
-    create or replace table {{ target_relation }} as (
-      {{ sql }}
-    )
-  {% endcall %}
-
-  {{ return({'relations': [target_relation]}) }}
-
-{% endmaterialization %}
+{% macro get_quarantine_tests(model) %}
+  {% if execute %}
+    {% set nodes = graph.nodes.values() %}
+    {% set matching_tests = nodes | selectattr('resource_type', 'equalto', 'test') | list %}
+  {% else %}
+    {% set matching_tests = {} %}
+  {% endif %}
+   return(matching_tests) 
+{% endmacro %}

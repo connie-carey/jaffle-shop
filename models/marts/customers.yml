@@ -1,6 +1,8 @@
 models:
   - name: customers
-    description: Customer overview data mart, offering key details for each unique customer. One row per customer.
+    config:
+      static_analysis: strict
+    description: "{{ doc('customer_description') }}"
     data_tests:
       - dbt_utils.expression_is_true:
           arguments:
